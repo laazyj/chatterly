@@ -1,0 +1,11 @@
+node_modules/
+coverage/
+
+# Runtime state: sessions and traces
+.data/
+
+# Local env
+.env
+
+# Scaffolding plan — discarded after implementation
+docs/PLAN.md

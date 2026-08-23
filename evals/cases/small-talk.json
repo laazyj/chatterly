@@ -1,0 +1,15 @@
+{
+  "name": "small-talk",
+  "description": "A plain exchange must produce an answer in one step, reach for no tools, and leak no reasoning markup.",
+  "turns": [
+    {
+      "user": "hello there",
+      "expect": {
+        "minLength": 2,
+        "notContains": "<think>",
+        "noToolCalls": true,
+        "maxSteps": 1
+      }
+    }
+  ]
+}

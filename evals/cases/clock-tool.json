@@ -1,0 +1,16 @@
+{
+  "name": "clock-tool",
+  "description": "A question the model cannot answer alone must reach the clock tool and come back with its result.",
+  "turns": [
+    {
+      "user": "what time is it?",
+      "expect": {
+        "toolCalled": "clock",
+        "toolsSucceeded": true,
+        "notContains": "<think>",
+        "minLength": 4,
+        "maxSteps": 3
+      }
+    }
+  ]
+}

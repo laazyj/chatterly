@@ -1,0 +1,39 @@
+{
+  "name": "chatterly",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "AI-native conversational agent scaffold for a small, locally running LLM",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "eval": "node evals/run.ts",
+    "check": "npm run typecheck && npm run lint && npm run test",
+    "clean": "npm run clean:data && rm -rf node_modules coverage *.tsbuildinfo",
+    "clean:data": "rm -rf .data"
+  },
+  "dependencies": {
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.2.0",
+    "@vitest/coverage-v8": "^4.1.11",
+    "eslint": "^10.8.1",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.9.6",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.67.0",
+    "vitest": "^4.1.11"
+  }
+}
