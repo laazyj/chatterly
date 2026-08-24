@@ -23,6 +23,7 @@
     "clean:data": "rm -rf .data"
   },
   "dependencies": {
+    "sqlite-vec": "^0.1.9",
     "zod": "^4.4.3"
   },
   "devDependencies": {
