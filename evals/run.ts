@@ -24,7 +24,14 @@ interface CaseReport {
  */
 async function main(): Promise<void> {
   const config = loadConfig();
-  const app = createApp({ ...config, dataDir: join(config.dataDir, "evals") });
+  // Temperature is pinned rather than inherited: at the default 0.7 a small model words
+  // the same correct answer differently between runs, and a suite that flips between 4/5
+  // and 5/5 on identical code cannot tell a regression from a dice roll.
+  const app = createApp({
+    ...config,
+    temperature: 0,
+    dataDir: join(config.dataDir, "evals"),
+  });
 
   const source: CaseSource = jsonFileCaseSource(join(import.meta.dirname, "cases"));
   const grader: Grader = deterministicGrader();
