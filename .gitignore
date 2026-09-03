@@ -4,8 +4,10 @@ coverage/
 # Runtime state: sessions and traces
 .data/
 
-# Local env
+# Local env (.env.example is the tracked template)
 .env
+.env.*
+!.env.example
 
 # Scaffolding plan — discarded after implementation
 docs/PLAN.md
